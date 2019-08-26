@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const Celebrity = require('../models/Celebrity');
+const Movie = require('../models/Movie');
 
 mongoose.connect('mongodb://localhost/movies', { useNewUrlParser: true });
 
-const celebrities = [
+/* const celebrities = [
     {
         name: "Tom Cruise",
         occupation: "Actor",
@@ -20,8 +20,25 @@ const celebrities = [
         catchPhrase: "loca loca loca"
     }
 ]
+ */
+const movies = [{
+    title: 'Movie1',
+    genre: 'Terror',
+    plot: 'uuuu aaaaa eeee'
+},
+{
+    title: 'Movie2',
+    genre: 'Suspense',
+    plot: 'uuuu aaaaa eeee2'
+},
+{
+    title: 'Movie3',
+    genre: 'Terror3',
+    plot: 'uuuu aaaaa eeee3'
+}]
 
-Celebrity.collection
+
+Movie.collection
     .drop()
     .then(() => {
         console.log('deleted db');
@@ -29,7 +46,7 @@ Celebrity.collection
     .catch((err) => {
         console.log(err);
     })
-    .then(() => Celebrity.insertMany(celebrities))
+    .then(() => Movie.insertMany(movies))
     .then(() => {
         console.log('inserted data');
         mongoose.connection.close();

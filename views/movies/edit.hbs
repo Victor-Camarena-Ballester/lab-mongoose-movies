@@ -1,0 +1,9 @@
+<h2>Edit a Movie</h2>
+<a href="javascript:window.history.back()">go back</a>
+<form action="/movies/{{movie._id}}" method="POST">
+    <input type="hidden" name="_id" value="{{movie._id}}"><br />
+    <div>title: <input type="text" name="title" value="{{movie.title}}"></name:>
+        <div>genre: <input type="text" name="genre" value="{{movie.genre}}"></div>
+        <div>plot <input type="text" name="plot" value="{{movie.plot}}"></div><br />
+        <input type="submit" value="Send">
+</form>

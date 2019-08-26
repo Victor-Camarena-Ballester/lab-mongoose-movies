@@ -1,0 +1,9 @@
+<h2>Edit a Celebrity</h2>
+<a href="javascript:window.history.back()">go back</a>
+<form action="/celebrities/{{celebrity._id}}" method="POST">
+    <input type="hidden" name="_id" value="{{celebrity._id}}"><br />
+    <div>name: <input type="text" name="name" value="{{celebrity.name}}"></name:>
+        <div>occupation: <input type="text" name="occupation" value="{{celebrity.occupation}}"></div>
+        <div>catchPhrase <input type="text" name="catchPhrase" value="{{celebrity.catchPhrase}}"></div><br />
+        <input type="submit" value="Send">
+</form>
